@@ -1,0 +1,55 @@
+= My Custom Report
+v1.0, 2014-01-01
+:description: Example Report using only asciidoctor and JVM magic
+:organization: Company Name
+:toc:
+:table-stripes: even
+
+== Some Text
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque eget ante elit.
+Curabitur lacinia rhoncus cursus.
+In volutpat lacus at convallis semper.
+Cras et lacus enim.
+Suspendisse at accumsan velit.
+Suspendisse tincidunt, libero in venenatis posuere, purus nulla consequat sapien, quis faucibus quam nulla vitae tortor.
+
+Quisque ultricies dictum pharetra.
+Donec fermentum mattis nisi.
+Nulla tempus turpis ex, ac venenatis mauris mattis sed.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Vivamus sagittis lectsus eros, sit amet commodo diam eleifend ac.
+Quisque rhoncus eleifend arcu at vehicula.
+Sed ornare ante lacus, quis malesuada libero commodo ut.
+
+NOTE: Working with asciidoc is nice !
+
+=== Tables
+
+.example table
+[cols="1,1"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+
+=== Diagrams
+
+.a diagram
+[plantuml,format=png, align=center]
+----
+@startuml
+
+Bob -> Alice: Hello!
+
+@enduml
+----
+

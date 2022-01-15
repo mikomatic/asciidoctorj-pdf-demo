@@ -1,0 +1,46 @@
+extends: default
+
+page:
+  initial-zoom: Fit
+
+title_page:
+  align: right
+  logo:
+    image: image:sample-logo.jpg[pdfwidth=20%, align=center]
+    top: 10%
+  title:
+    font_color: 005f87
+
+heading:
+  chapter:
+    break-before: auto
+  part:
+    break-before: auto
+
+header:
+  font_color: 999999
+  height: 0.5in
+  recto:
+    columns: "<40% =20% >40%"
+    right:
+      content: '_{organization}_'
+    center:
+      content: image:sample-logo.jpg[pdfwidth=0.25in]
+    left:
+      content: '{document-title}'
+  verso:
+    columns: $header_recto_columns
+    right:
+      content: $header_recto_right_content
+    left:
+      content: $header_recto_left_content
+    center:
+      content: $header_recto_center_content
+footer:
+  height: 0.45in
+  recto:
+    right:
+      content: '{section-or-chapter-title} | Page : {page-number}/{page-count}'
+  verso:
+    left:
+      content: 'Page : {page-number}/{page-count} | {chapter-title}'

@@ -16,24 +16,24 @@ import java.nio.file.Path;
 @Service
 public class AsciidocPDFRendererAS {
 
-    public void generate(String asciidocContent, String theme, Path outputLocation) {
-        try (Asciidoctor asciidoctor = Asciidoctor.Factory.create()) {
+  public void generate(String asciidocContent, String theme, Path outputLocation) {
+    try (Asciidoctor asciidoctor = Asciidoctor.Factory.create()) {
 
-            // Optional dependency if report contains diagrams, requires external binary
-            asciidoctor.requireLibrary("asciidoctor-diagram");
+      // Optional dependency if report contains diagrams, requires external binary
+      asciidoctor.requireLibrary("asciidoctor-diagram");
 
-            Attributes attributes = Attributes.builder()
-                    .attribute("pdf-theme", theme)
-                    .attribute("doctype", "book")
-                    .attribute("icons", "font")
-                    .build();
+      Attributes attributes = Attributes.builder()
+              .attribute("pdf-theme", theme)
+              .attribute("doctype", "book")
+              .attribute("icons", "font")
+              .build();
 
-            Options options = Options.builder()
-                    .backend("pdf")
-                    .attributes(attributes)
-                    .toFile(outputLocation.toFile()).build();
+      Options options = Options.builder()
+              .backend("pdf")
+              .attributes(attributes)
+              .toFile(outputLocation.toFile()).build();
 
-            asciidoctor.convert(asciidocContent, options);
-        }
+      asciidoctor.convert(asciidocContent, options);
     }
+  }
 }

@@ -12,19 +12,19 @@ import java.nio.file.Paths;
 @Component
 public class AppStartupRunner implements ApplicationRunner {
 
-    private final AsciidocPDFRendererAS asciidocPDFRendererAS;
+  private final AsciidocPDFRendererAS asciidocPDFRendererAS;
 
-    public AppStartupRunner(AsciidocPDFRendererAS asciidocPDFRendererAS) {
-        this.asciidocPDFRendererAS = asciidocPDFRendererAS;
-    }
+  public AppStartupRunner(AsciidocPDFRendererAS asciidocPDFRendererAS) {
+    this.asciidocPDFRendererAS = asciidocPDFRendererAS;
+  }
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
+  @Override
+  public void run(ApplicationArguments args) throws Exception {
 
         /* This is a static template but could also be generated from dynamic data via any templating
            system (eg. mustache)  */
-        String asciidocContent = StreamUtils.copyToString(new ClassPathResource("example-template.adoc").getInputStream(), StandardCharsets.UTF_8);
+    String asciidocContent = StreamUtils.copyToString(new ClassPathResource("example-template.adoc").getInputStream(), StandardCharsets.UTF_8);
 
-        asciidocPDFRendererAS.generate(asciidocContent, "uri:classloader:/pdf-theme.yml", Paths.get("./target/output-report.pdf"));
-    }
+    asciidocPDFRendererAS.generate(asciidocContent, "uri:classloader:/pdf-theme.yml", Paths.get("./target/output-report.pdf"));
+  }
 }

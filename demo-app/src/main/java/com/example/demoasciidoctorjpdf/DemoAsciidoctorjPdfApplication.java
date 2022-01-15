@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoAsciidoctorjPdfApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoAsciidoctorjPdfApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(DemoAsciidoctorjPdfApplication.class, args);
+  }
 
 }
